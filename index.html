@@ -41,17 +41,22 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
         
-        .logo {
-            background-color: #2f8094; /* The teal background */
-            color: #ffffff;
-            font-size: 26px;
-            font-weight: bold;
-            padding: 10px 20px;
-            border: 3px solid #ffffff; /* The inner white border */
-            box-shadow: 0 0 0 5px #2f8094; /* The outer teal border */
+        /* Upgraded Image Logo Styling */
+        .logo-link {
             display: inline-block;
-            margin: 5px; /* Gives the box-shadow room to breathe */
-            letter-spacing: 1px;
+            margin: 5px; /* Keeps same spacing as old logo box-shadow */
+            transition: transform 0.3s ease; /* Adds the interactive 'hover pop' effect! */
+        }
+
+        .logo-link:hover {
+            transform: scale(1.05); /* Logo slightly 'pops' forward on hover */
+        }
+
+        .logo-img {
+            /* This shrinks the 160px file down to 70px, making it look incredibly sharp */
+            max-height: 70px; 
+            width: auto; /* Keeps proportions perfect */
+            display: block; /* Removes image base padding issues */
         }
         
        /* Upgraded Search Bar */
@@ -219,7 +224,10 @@
     </div>
 
     <header>
-        <div class="logo">Erandi Book Shop</div>
+        <!-- The logo is now a link back to the home page! -->
+        <a href="#" class="logo-link">
+            <img src="logo.png" alt="Erandi Book Shop Logo" class="logo-img">
+        </a>
         
         <div class="search-container">
             <input type="text" id="searchInput" class="search-bar" placeholder="🔍 Search for stationery, tuition materials..." onkeyup="filterSearch()">
